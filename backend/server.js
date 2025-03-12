@@ -5,6 +5,8 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
+const HOST = "192.168.4.117"; // Change this to your actual IP
+const PORT = 4000;
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
@@ -40,4 +42,6 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-app.listen(5050, () => console.log("Server running on port 5050"));
+app.listen(PORT, HOST, () => {
+  console.log(`Server running at http://${HOST}:${PORT}`);
+});

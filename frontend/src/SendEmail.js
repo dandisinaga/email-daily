@@ -22,7 +22,7 @@ function SendEmail() {
       const email = localStorage.getItem("email");
       const password = localStorage.getItem("password");
 
-      await axios.post("http://localhost:5050/send-email", {
+      await axios.post("http://192.168.4.117:4000/send-email", {
         email,
         password,
         to: recipientEmail,
